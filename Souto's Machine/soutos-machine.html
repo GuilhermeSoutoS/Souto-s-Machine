@@ -1,0 +1,174 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+<!--Aprimorado por Guilherme Souto | 2025.2 -->
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souto's Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#00ffff">
+    <div class="main-container">
+        <div class="container">
+            <center>
+                <h1>Souto's Machine</h1>
+                <div class="frase">
+
+                    <h3>Digite um número decimal:</h3>
+                </div>
+                <div class="escrever">
+                    <input id="demo1" type="text" placeholder="Ex: 42">
+                </div>
+                <br><br>
+                <div class="botão">
+                    <button onclick="converter()"><b>Converter</b></button>
+                </div>
+                <h3>Resultados:</h3>
+                <div class="Resultados">
+                    <p>Octal: <span class="valor" id="demo2"></span>
+                    </p>
+                    <p>Hexadecimal: <span class="valor" id="demo3"></span>
+                    </p>
+                    <p>Binário: <span class="valor" id="demo4"></span>
+                    </p>
+                </div>
+        </div>
+
+        <div class="container">
+            <h1>Souto's Machine</h1>
+            <div class="frase">
+
+                <h3>Digite um número binário:</h3>
+            </div>
+            <div class="escrever">
+                <input id="binInput" type="text" placeholder="Ex: 1111">
+            </div>
+            <br><br>
+            <div class="botão">
+                <button onclick="converterBin()"><b>Converter</b></button>
+            </div>
+            <h3>Resultados:</h3>
+            <div class="Resultados">
+                <p>Octal: <span class="valor" id="bin1"></span>
+                </p>
+                <p>Hexadecimal: <span class="valor" id="bin2"></span>
+                </p>
+                <p>Decimal: <span class="valor" id="bin3"></span>
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Souto's Machine</h1>
+            <div class="frase">
+
+                <h3>Digite um número octal:</h3>
+            </div>
+            <div class="escrever">
+                <input id="octInput" type="text" placeholder="Ex: 7">
+            </div>
+            <br><br>
+            <div class="botão">
+                <button onclick="converterOct()"><b>Converter</b></button>
+            </div>
+            <h3>Resultados:</h3>
+            <div class="Resultados">
+                <p>Decimal: <span class="valor" id="oct1"></span>
+                </p>
+                <p>Hexadecimal: <span class="valor" id="oct2"></span>
+                </p>
+                <p>Binário: <span class="valor" id="oct3"></span>
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <h1>Souto's Machine</h1>
+            <div class="frase">
+
+                <h3>Digite um número hexadecimal:</h3>
+            </div>
+            <div class="escrever">
+                <input id="hexInput" type="text" placeholder="Ex: 1A">
+            </div>
+            <br><br>
+            <div class="botão">
+                <button onclick="converterHex()"><b>Converter</b></button>
+            </div>
+            <h3>Resultados:</h3>
+            <div class="Resultados">
+                <p>Decimal: <span class="valor" id="hex1"></span>
+                </p>
+                <p>Octal: <span class="valor" id="hex2"></span>
+                </p>
+                <p>Binário: <span class="valor" id="hex3"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    </center>
+
+    <script>
+        function converter() {
+            var decimal = Number(demo1.value);
+
+            if (!/^[0-9]+$/.test(decimal)) {
+                alert("Insira um número válido!");
+            }
+
+            demo2.innerHTML = decimal.toString(8);
+            demo3.innerHTML = decimal.toString(16);
+            demo4.innerHTML = decimal.toString(2);
+
+        }
+
+        function converterBin() {
+
+            var num1 = binInput.value;
+
+            if (!/^[0-1]+$/.test(num1)) {
+                alert("Insira um número válido!");
+            }
+
+            var bin = parseInt(binInput.value, 2);
+
+            bin1.innerHTML = bin.toString(8);
+            bin2.innerHTML = bin.toString(16).toUpperCase;
+            bin3.innerHTML = bin.toString(10);
+        }
+
+        function converterOct() {
+            var num2 = octInput.value;
+
+            if (!/^[0-7]+$/.test(num2)) {
+                alert("Insira um número válido!");
+            }
+
+            var oct = parseInt(octInput.value, 8);
+
+            oct1.innerHTML = oct.toString(10);
+            oct2.innerHTML = oct.toString(16).toUpperCase;
+            oct3.innerHTML = oct.toString(2);
+
+        }
+
+        function converterHex() {
+            var num3 = hexInput.value;
+
+            if (!/^[0-9a-fA-F]+$/.test(num3)) {
+                alert("Insira um número válido!");
+            }
+
+            var hex = parseInt(hexInput.value, 16);
+
+            hex1.innerHTML = hex.toString(10);
+            hex2.innerHTML = hex.toString(8);
+            hex3.innerHTML = hex.toString(2);
+
+        }
+    </script>
+</body>
+
+</html>
